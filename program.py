@@ -3,10 +3,16 @@
 # First-party Imports
 from datastructures import LinkedList
 from employee import Employee
+from sorts import BubbleSort
 
 
 def main(*args):
     """Method to run program"""
+
+    ###########################
+    # Linked List Work        #
+    ###########################
+
     # Make an instance of Linked List
     linked_list = LinkedList()
 
@@ -50,3 +56,17 @@ def main(*args):
     employee_list.add_to_front(Employee("David", "Barnes", 750.00))
     employee_list.add_to_front(Employee("Jean-Luc", "Picard", 640.00))
     print(employee_list)
+
+    ###########################
+    # Bubble Sort Work        #
+    ###########################
+
+    # Demonstrate how the bubble sort works.
+    bubble = BubbleSort()
+    # Create list to sort
+    list_to_sort = [4, 2, 7, 3, 8, 6, 1, 9, 5]
+    # Sort the list
+    bubble.sort(list_to_sort)
+    # Loop and print values in list.
+    for value in list_to_sort:
+        print(value)
