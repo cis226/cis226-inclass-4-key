@@ -1,7 +1,7 @@
 """Program code"""
 
 # First-party Imports
-from datastructures import LinkedList
+from datastructures import LinkedList, HashTable
 from employee import Employee
 from sorts import BubbleSort
 
@@ -70,3 +70,57 @@ def main(*args):
     # Loop and print values in list.
     for value in list_to_sort:
         print(value)
+
+    ###########################
+    # Hash Table Work         #
+    ###########################
+
+    # Demonstrate how the hash table works
+    valley_num_to_name = HashTable()
+    print()
+    print("Adding some entries to the HashTable")
+    print('EX: valley_num_to_name.put(12345, "David Barnes")')
+
+    valley_num_to_name.put(12345, "James Kirk")
+    valley_num_to_name.put(23456, "Benjamin Sisko")
+    valley_num_to_name.put(34567, "Kathryn Janeway")
+    valley_num_to_name.put(45678, "Jean-Luc Picard")
+    valley_num_to_name.put(56789, "Jonathan Archer")
+
+    print("The created hash table")
+    print(valley_num_to_name)
+    print(valley_num_to_name.show_array())
+    print("************************")
+
+    print("Get a single value out from the hash table")
+    print("valley_num_to_name.get(45678)")
+    print(valley_num_to_name.get(45678))
+    print()
+
+    print("What if we add 2 entries that collide")
+    print('valley_num_to_name.put(26189, "First Entry")')
+    valley_num_to_name.put(26189, "First Entry")
+    print('valley_num_to_name.get(26092, "Second Entry")')
+    valley_num_to_name.put(26092, "Second Entry")
+
+    print()
+    print(valley_num_to_name)
+    print(valley_num_to_name.show_array())
+    print()
+
+    print("Get the first entry out")
+    print("valley_num_to_name.get(26189)")
+    print(valley_num_to_name.get(26189))
+    print("Got second entry instead. First was overwritten.")
+    print()
+    print()
+
+    # What if we were to do string keys?
+    print("What about using string keys")
+    string_hash_table = HashTable()
+    string_hash_table.put("foobar", "Joe Smith")
+    string_hash_table.put("barbaz", "Fred Drees")
+    print(string_hash_table.get("foobar"))
+    print(string_hash_table.get("barbaz"))
+    print(string_hash_table)
+    print("String keys work too!")
